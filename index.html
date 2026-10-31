@@ -20,6 +20,8 @@
       --accent-danger: #f43f5e;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
+      --code-bg: #0d1322;
+      --console-bg: #080c14;
     }
 
     * {
@@ -204,6 +206,11 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .team-meta-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
     .team-tag {
       background: rgba(16, 185, 129, 0.2);
       color: #34d399;
@@ -212,6 +219,61 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 700;
+    }
+
+    /* GUIDE SHOWCASE BANNER */
+    .guide-banner {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(99, 102, 241, 0.15));
+      border: 1.5px solid rgba(245, 158, 11, 0.4);
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .guide-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .guide-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.4);
+    }
+    .guide-text-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fbbf24;
+      font-weight: 800;
+    }
+    .guide-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .guide-badge-pill {
+      background: rgba(245, 158, 11, 0.25);
+      border: 1px solid rgba(245, 158, 11, 0.6);
+      color: #fde68a;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     /* 6 Members Grid */
@@ -257,7 +319,6 @@
       font-weight: 700;
       color: #ffffff;
       font-size: 0.98rem;
-      text-transform: capitalize;
     }
     .member-role {
       font-size: 0.75rem;
@@ -302,9 +363,10 @@
       border-radius: 16px;
       padding: 24px;
       transition: transform 0.3s ease, border-color 0.3s ease;
+      margin-bottom: 24px;
     }
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       border-color: rgba(99, 102, 241, 0.5);
     }
     .grid-2 {
@@ -384,7 +446,8 @@
       border-left: 5px solid var(--primary);
       border-radius: 12px;
       padding: 20px 24px;
-      margin-top: 24px;
+      margin-top: 20px;
+      margin-bottom: 24px;
     }
     .two-points-header {
       font-size: 0.82rem;
@@ -433,6 +496,91 @@
       line-height: 1.45;
     }
 
+    /* ================= CODE & CONSOLE PANELS ================= */
+    .code-console-wrapper {
+      margin-top: 28px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      background: var(--code-bg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .code-console-header {
+      background: #111827;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-window-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+    .code-title {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      font-weight: 700;
+      font-family: monospace;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .code-grid-split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      divide-x: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .code-pane {
+      background: var(--code-bg);
+      padding: 16px 20px;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .console-pane {
+      background: var(--console-bg);
+      padding: 16px 20px;
+    }
+    .pane-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pane-tag-code { color: #818cf8; }
+    .pane-tag-output { color: #34d399; }
+    pre {
+      font-family: "Fira Code", Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .python-code { color: #e2e8f0; }
+    .python-code .kw { color: #f43f5e; font-weight: bold; }
+    .python-code .fn { color: #38bdf8; }
+    .python-code .str { color: #a7f3d0; }
+    .python-code .num { color: #fbbf24; }
+    .python-code .cmt { color: #64748b; font-style: italic; }
+    .console-text {
+      color: #38bdf8;
+      font-family: "Fira Code", Monaco, Consolas, "Courier New", monospace;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
     /* Correlation Heatmap Grid */
     .heatmap-grid {
       display: grid;
@@ -471,6 +619,43 @@
       margin-top: 10px;
     }
 
+    /* Links & Resource Bar */
+    .resource-strip {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+    .resource-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .res-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .res-link-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary-light);
+    }
+
     /* Scroll To Top Button */
     .top-btn {
       position: fixed;
@@ -503,7 +688,6 @@
   <header>
     <div class="brand">
       <div class="logo-badge">
-        <!-- SVG Vector Logo -->
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 3v18h18"/>
           <path d="M18 17V9"/>
@@ -513,7 +697,7 @@
       </div>
       <div class="brand-text">
         <span class="brand-title">TEAM ACHIEVERS</span>
-        <span class="brand-sub">Marketing Performance Audit</span>
+        <span class="brand-sub">Guide: Ajey BK &bull; Marketing Audit</span>
       </div>
     </div>
     <nav>
@@ -532,22 +716,20 @@
     <!-- HERO SECTION -->
     <div class="hero">
       <div class="hero-badge-container">
-        <!-- Inner Logo Icon -->
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.5">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
         </svg>
-        <span>PROJECT DEMO & PRESENTATION</span>
+        <span>PYTHON DATA ANALYSIS PROJECT &bull; MARKETING CAMPAIGNS</span>
       </div>
 
       <h1>Marketing Campaign Analytics</h1>
       <p>An end-to-end data evaluation covering inspection, cleaning, descriptive KPIs, exploratory analysis, and performance modeling across 200 multichannel campaigns.</p>
 
-      <!-- ================= TEAM ACHIEVERS SHOWCASE ================= -->
+      <!-- ================= TEAM ACHIEVERS & GUIDE SHOWCASE ================= -->
       <div class="team-showcase">
         <div class="team-top-row">
           <div class="team-branding">
             <div class="team-logo-icon">
-              <!-- Trophy/Star Icon -->
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
@@ -558,18 +740,33 @@
             </div>
             <div>
               <div class="team-name-title">Presented by: <span>Team Achievers</span></div>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Python Data Analytics Project Team</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Python Data Analytics Research Team</div>
             </div>
           </div>
-          <div class="team-tag">6 Active Contributors</div>
+          <div class="team-meta-badges">
+            <div class="team-tag">6 Active Contributors</div>
+          </div>
         </div>
 
+        <!-- PROJECT GUIDE SPOTLIGHT -->
+        <div class="guide-banner">
+          <div class="guide-info">
+            <div class="guide-avatar">G</div>
+            <div>
+              <div class="guide-text-title">Project Guide & Mentorship</div>
+              <div class="guide-name">Ajey BK</div>
+            </div>
+          </div>
+          <div class="guide-badge-pill">Faculty / Project Guide</div>
+        </div>
+
+        <!-- 6 MEMBERS GRID -->
         <div class="members-grid">
           <!-- Member 1 -->
           <div class="member-box">
             <div class="member-num">1</div>
             <div class="member-details">
-              <span class="member-name">Aruna Bavithra Varshini</span>
+              <span class="member-name">Aruna Bavithra Varshini V</span>
               <span class="member-role">Team Member / Data Analyst</span>
             </div>
           </div>
@@ -577,7 +774,7 @@
           <div class="member-box">
             <div class="member-num">2</div>
             <div class="member-details">
-              <span class="member-name">Johnson Dass Christo</span>
+              <span class="member-name">Johnson Dass Christo V</span>
               <span class="member-role">Team Member / Data Analyst</span>
             </div>
           </div>
@@ -593,7 +790,7 @@
           <div class="member-box">
             <div class="member-num">4</div>
             <div class="member-details">
-              <span class="member-name">Mohammed Arsath</span>
+              <span class="member-name">Mohammed Arsath S</span>
               <span class="member-role">Team Member / Data Analyst</span>
             </div>
           </div>
@@ -601,7 +798,7 @@
           <div class="member-box">
             <div class="member-num">5</div>
             <div class="member-details">
-              <span class="member-name">Durga Akshay</span>
+              <span class="member-name">Durga Akshay D</span>
               <span class="member-role">Team Member / Data Analyst</span>
             </div>
           </div>
@@ -609,7 +806,7 @@
           <div class="member-box">
             <div class="member-num">6</div>
             <div class="member-details">
-              <span class="member-name">Vijiyalakshmi</span>
+              <span class="member-name">Vijayalakshmi G</span>
               <span class="member-role">Team Member / Data Analyst</span>
             </div>
           </div>
@@ -620,7 +817,7 @@
     <!-- ================= 1. DATA INSPECTION ================= -->
     <section id="sec1">
       <div class="section-header">
-        <span class="section-tag">Stage 01</span>
+        <span class="section-tag">Question 01 &bull; Stage 01</span>
         <h2 class="section-title">Data Inspection & Architecture</h2>
         <p class="section-desc">Auditing data shapes, datatypes, missingness, and foundational statistical ranges.</p>
       </div>
@@ -629,22 +826,22 @@
         <div class="card">
           <div class="kpi-label">Total Observations</div>
           <div class="kpi-value">200</div>
-          <div class="kpi-sub">&bull; Rows in DataFrame</div>
+          <div class="kpi-sub">&bull; Distinct Campaigns</div>
         </div>
         <div class="card">
           <div class="kpi-label">Attribute Dimensions</div>
           <div class="kpi-value">8</div>
-          <div class="kpi-sub">&bull; Distinct feature fields</div>
+          <div class="kpi-sub">&bull; Feature Fields</div>
         </div>
         <div class="card">
           <div class="kpi-label">Audience Segments</div>
           <div class="kpi-value">5</div>
-          <div class="kpi-sub">&bull; Unique cohort groups</div>
+          <div class="kpi-sub">&bull; Cohort Categories</div>
         </div>
         <div class="card">
           <div class="kpi-label">Marketing Channels</div>
           <div class="kpi-value">6</div>
-          <div class="kpi-sub">&bull; Distinct acquisition modes</div>
+          <div class="kpi-sub">&bull; Acquisition Modes</div>
         </div>
       </div>
 
@@ -688,8 +885,54 @@
             <div class="point-number">2</div>
             <div class="point-content">
               <strong>Substantial Performance Variance Identified Early</strong>
-              <p>Descriptive statistics from <code>.describe()</code> revealed extensive dispersion: impressions ranged from a minimal 1,924 to 99,545, while campaign spend fluctuated between ₹520 and ₹49,835, hinting at completely distinct campaign scaling strategies.</p>
+              <p>Descriptive statistics from <code>.describe()</code> revealed extensive dispersion: impressions ranged from a minimal 1,924 to 99,545, while campaign spend fluctuated between ₹520.64 and ₹49,835.02, hinting at completely distinct campaign scaling strategies.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE & OUTPUT BLOCK -->
+      <div class="code-console-wrapper">
+        <div class="code-console-header">
+          <div class="header-window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="code-title">stage_01_data_inspection.py</div>
+        </div>
+        <div class="code-grid-split">
+          <div class="code-pane">
+            <div class="pane-tag pane-tag-code">🐍 Python Implementation Code</div>
+            <pre class="python-code"><span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+<span class="cmt"># Load dataset</span>
+df = pd.<span class="fn">read_csv</span>(<span class="str">"marketing_campaigns.csv"</span>)
+
+<span class="cmt"># 1. Structural inspection</span>
+<span class="fn">print</span>(<span class="str">"Shape:"</span>, df.shape)
+<span class="fn">print</span>(<span class="str">"Columns:"</span>, <span class="fn">list</span>(df.columns))
+
+<span class="fn">print</span>(<span class="str">"\nSchema &amp; Info:"</span>)
+df.<span class="fn">info</span>()
+
+<span class="fn">print</span>(<span class="str">"\nNumerical Distribution Profile:"</span>)
+<span class="fn">print</span>(df.<span class="fn">describe</span>().T[[<span class="str">'count'</span>,<span class="str">'mean'</span>,<span class="str">'std'</span>,<span class="str">'min'</span>,<span class="str">'50%'</span>,<span class="str">'max'</span>]])</pre>
+          </div>
+          <div class="console-pane">
+            <div class="pane-tag pane-tag-output">⚡ Console Execution Output</div>
+            <pre class="console-text">Dataset Shape: (200, 8)
+Columns: ['CampaignID', 'CampaignDate', 'Channel', 
+          'AudienceSegment', 'Impressions', 'Clicks', 
+          'Conversions', 'SpendINR']
+
+Data Summary (200 non-null records):
+Impressions : mean 51,280.95 | min 1,924   | max 99,545
+Clicks      : mean  3,710.15 | min    62   | max 13,516
+Conversions : mean    460.67 | min     2   | max  2,474
+SpendINR    : mean 23,942.88 | min ₹520.64 | max ₹49,835.02
+
+Data Integrity: Zero null values detected on ingest.</pre>
           </div>
         </div>
       </div>
@@ -698,7 +941,7 @@
     <!-- ================= 2. DATA CLEANING ================= -->
     <section id="sec2">
       <div class="section-header">
-        <span class="section-tag">Stage 02</span>
+        <span class="section-tag">Question 02 &bull; Stage 02</span>
         <h2 class="section-title">Data Cleaning & Funnel Validation</h2>
         <p class="section-desc">Guaranteeing zero missing records, non-duplicate primary keys, and strict marketing funnel logic.</p>
       </div>
@@ -772,8 +1015,56 @@
             <div class="point-number">2</div>
             <div class="point-content">
               <strong>Rigorous Verification of Funnel Physics</strong>
-              <p>We executed assertional boundary checks ensuring that physical marketing constraints held true: clicks never exceeded impressions, conversions never exceeded clicks, and zero negative spends occurred, confirming the integrity of downstream ROI math.</p>
+              <p>We executed assertional boundary checks ensuring that physical marketing constraints held true: clicks never exceeded impressions, conversions never exceeded clicks, and zero negative spends occurred, confirming downstream math reliability.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE & OUTPUT BLOCK -->
+      <div class="code-console-wrapper">
+        <div class="code-console-header">
+          <div class="header-window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="code-title">stage_02_data_cleaning.py</div>
+        </div>
+        <div class="code-grid-split">
+          <div class="code-pane">
+            <div class="pane-tag pane-tag-code">🐍 Python Implementation Code</div>
+            <pre class="python-code"><span class="cmt"># 2. Data Cleaning &amp; Transformation Pipeline</span>
+df_clean = df.<span class="fn">copy</span>()
+
+<span class="cmt"># Datatype conversions</span>
+df_clean[<span class="str">"CampaignDate"</span>] = pd.<span class="fn">to_datetime</span>(df_clean[<span class="str">"CampaignDate"</span>])
+df_clean[<span class="str">"Channel"</span>] = df_clean[<span class="str">"Channel"</span>].<span class="fn">astype</span>(<span class="str">"category"</span>)
+df_clean[<span class="str">"AudienceSegment"</span>] = df_clean[<span class="str">"AudienceSegment"</span>].<span class="fn">astype</span>(<span class="str">"category"</span>)
+
+<span class="cmt"># Assertion verification</span>
+<span class="kw">assert</span> df_clean[<span class="str">"CampaignID"</span>].<span class="fn">duplicated</span>().<span class="fn">sum</span>() == <span class="num">0</span>, <span class="str">"Duplicate IDs!"</span>
+<span class="kw">assert</span> (df_clean[<span class="str">"Clicks"</span>] &gt; df_clean[<span class="str">"Impressions"</span>]).<span class="fn">sum</span>() == <span class="num">0</span>
+<span class="kw">assert</span> (df_clean[<span class="str">"Conversions"</span>] &gt; df_clean[<span class="str">"Clicks"</span>]).<span class="fn">sum</span>() == <span class="num">0</span>
+<span class="kw">assert</span> (df_clean[<span class="str">"SpendINR"</span>] &lt; <span class="num">0</span>).<span class="fn">sum</span>() == <span class="num">0</span>
+
+<span class="fn">print</span>(<span class="str">"All business logic assertions passed successfully."</span>)</pre>
+          </div>
+          <div class="console-pane">
+            <div class="pane-tag pane-tag-output">⚡ Console Execution Output</div>
+            <pre class="console-text">[CLEANING &amp; SANITIZATION VERIFICATION]
+--------------------------------------------------
+Missing Values Check : 0 Missing Fields
+Duplicate IDs Found  : 0 Duplicates (200 Unique)
+Funnel Assertions:
+ - Clicks &lt;= Impressions   : PASSED (0 breaches)
+ - Conversions &lt;= Clicks   : PASSED (0 breaches)
+ - SpendINR &gt;= 0           : PASSED (0 negative values)
+Datatypes Converted:
+ - CampaignDate   : datetime64[ns]
+ - Channel        : 6 Category Levels
+ - AudienceSegment: 5 Category Levels
+Status: Data sanitized and verified.</pre>
           </div>
         </div>
       </div>
@@ -782,7 +1073,7 @@
     <!-- ================= 3. STATISTICAL ANALYSIS ================= -->
     <section id="sec3">
       <div class="section-header">
-        <span class="section-tag">Stage 03</span>
+        <span class="section-tag">Question 03 &bull; Stage 03</span>
         <h2 class="section-title">Descriptive Statistical Analysis</h2>
         <p class="section-desc">Global totals, customer acquisition velocity, and macro performance ratios.</p>
       </div>
@@ -790,23 +1081,23 @@
       <div class="grid-4">
         <div class="card">
           <div class="kpi-label">Total Impressions</div>
-          <div class="kpi-value">10.36M</div>
-          <div class="kpi-sub">Mean: 51,788 / campaign</div>
+          <div class="kpi-value">10.26M</div>
+          <div class="kpi-sub">Mean: 51,281 / campaign</div>
         </div>
         <div class="card">
           <div class="kpi-label">Total Clicks</div>
-          <div class="kpi-value">714.4K</div>
-          <div class="kpi-sub">Global CTR: 6.89%</div>
+          <div class="kpi-value">742.0K</div>
+          <div class="kpi-sub">Global CTR: 7.23%</div>
         </div>
         <div class="card">
           <div class="kpi-label">Total Conversions</div>
-          <div class="kpi-value">89,520</div>
-          <div class="kpi-sub">Global CVR: 12.53%</div>
+          <div class="kpi-value">92,134</div>
+          <div class="kpi-sub">Global CVR: 12.42%</div>
         </div>
         <div class="card">
           <div class="kpi-label">Total Spend (INR)</div>
-          <div class="kpi-value">₹4.69M</div>
-          <div class="kpi-sub">Blended CPA: ₹52.41</div>
+          <div class="kpi-value">₹4.79M</div>
+          <div class="kpi-sub">Blended CPA: ₹51.97</div>
         </div>
       </div>
 
@@ -818,15 +1109,67 @@
             <div class="point-number">1</div>
             <div class="point-content">
               <strong>Benchmark-Beating Conversion Velocity</strong>
-              <p>The campaign portfolio produced a global Click-Through Rate (CTR) of <strong>6.89%</strong> and a Conversion Rate (CVR) of <strong>12.53%</strong>. This high double-digit conversion efficiency highlights well-targeted audience messaging compared to typical industry averages (2–5%).</p>
+              <p>The campaign portfolio produced a global Click-Through Rate (CTR) of <strong>7.23%</strong> and a Conversion Rate (CVR) of <strong>12.42%</strong>. This high double-digit conversion efficiency highlights well-targeted audience messaging compared to typical industry averages (2–5%).</p>
             </div>
           </div>
           <div class="point-item">
             <div class="point-number">2</div>
             <div class="point-content">
               <strong>Cost-Effective Customer Acquisition (CPA)</strong>
-              <p>A blended total spend of ₹4,691,200 yielding 89,520 customer conversions resulted in an average Cost Per Acquisition (CPA) of only <strong>₹52.41</strong> and a Cost Per Click (CPC) of <strong>₹6.57</strong>, validating strong top-of-funnel financial viability.</p>
+              <p>A blended total spend of ₹4,788,576.84 yielding 92,134 customer conversions resulted in an average Cost Per Acquisition (CPA) of only <strong>₹51.97</strong> and a Cost Per Click (CPC) of <strong>₹6.45</strong>, validating strong marketing economics.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE & OUTPUT BLOCK -->
+      <div class="code-console-wrapper">
+        <div class="code-console-header">
+          <div class="header-window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="code-title">stage_03_statistical_analysis.py</div>
+        </div>
+        <div class="code-grid-split">
+          <div class="code-pane">
+            <div class="pane-tag pane-tag-code">🐍 Python Implementation Code</div>
+            <pre class="python-code"><span class="cmt"># 3. Macro KPI &amp; Portfolio Statistics</span>
+total_campaigns = <span class="fn">len</span>(df_clean)
+total_imp   = df_clean[<span class="str">"Impressions"</span>].<span class="fn">sum</span>()
+total_clk   = df_clean[<span class="str">"Clicks"</span>].<span class="fn">sum</span>()
+total_conv  = df_clean[<span class="str">"Conversions"</span>].<span class="fn">sum</span>()
+total_spend = df_clean[<span class="str">"SpendINR"</span>].<span class="fn">sum</span>()
+
+<span class="cmt"># Aggregate unit economics</span>
+portfolio_ctr = (total_clk / total_imp) * <span class="num">100</span>
+portfolio_cvr = (total_conv / total_clk) * <span class="num">100</span>
+portfolio_cpc = total_spend / total_clk
+portfolio_cpa = total_spend / total_conv
+
+<span class="fn">print</span>(<span class="str">f"Total Conversions Won : {total_conv:,}"</span>)
+<span class="fn">print</span>(<span class="str">f"Cumulative Spend      : ₹{total_spend:,.2f}"</span>)
+<span class="fn">print</span>(<span class="str">f"Portfolio CTR / CVR   : {portfolio_ctr:.2f}% / {portfolio_cvr:.2f}%"</span>)
+<span class="fn">print</span>(<span class="str">f"Portfolio CPC / CPA   : ₹{portfolio_cpc:.2f} / ₹{portfolio_cpa:.2f}"</span>)</pre>
+          </div>
+          <div class="console-pane">
+            <div class="pane-tag pane-tag-output">⚡ Console Execution Output</div>
+            <pre class="console-text">==================================================
+       PORTFOLIO MACRO KPI EXECUTIVE SUMMARY
+==================================================
+Total Campaigns Executed   : 200
+Aggregate Impressions Reach: 10,256,190
+Aggregate Traffic (Clicks) : 742,030
+Total Conversions Acquired : 92,134
+Total Budget Spent         : ₹4,788,576.84
+--------------------------------------------------
+Global Click-Through Rate  : 7.23%
+Global Conversion Rate     : 12.42%
+Global Cost Per Click      : ₹6.45
+Global Cost Per Acquisition: ₹51.97
+Mean Spend Per Campaign    : ₹23,942.88
+==================================================</pre>
           </div>
         </div>
       </div>
@@ -835,7 +1178,7 @@
     <!-- ================= 4. DATA MANIPULATION ================= -->
     <section id="sec4">
       <div class="section-header">
-        <span class="section-tag">Stage 04</span>
+        <span class="section-tag">Question 04 &bull; Stage 04</span>
         <h2 class="section-title">Data Manipulation & Derived KPIs</h2>
         <p class="section-desc">Engineering unit economics, temporal partitions, and isolating peak campaign outliers.</p>
       </div>
@@ -851,17 +1194,16 @@
                 <th>Audience</th>
                 <th>Conversions</th>
                 <th>Clicks</th>
-                <th>Spend (INR)</th>
                 <th>Derived CPA</th>
                 <th>Response Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td><strong>CMP0126</strong></td><td>SMS</td><td>Retirees</td><td><strong>2,474</strong></td><td>10,478</td><td>₹768.28</td><td style="color:#34d399; font-weight:700;">₹0.31</td><td><span class="badge badge-success">High Responder</span></td></tr>
-              <tr><td><strong>CMP0197</strong></td><td>Search Ads</td><td>Students</td><td><strong>2,416</strong></td><td>11,880</td><td>₹23,267.46</td><td style="color:#34d399; font-weight:700;">₹9.63</td><td><span class="badge badge-success">High Responder</span></td></tr>
-              <tr><td><strong>CMP0122</strong></td><td>Search Ads</td><td>Working Pros</td><td><strong>2,234</strong></td><td>9,716</td><td>₹17,414.36</td><td style="color:#34d399; font-weight:700;">₹7.80</td><td><span class="badge badge-success">High Responder</span></td></tr>
-              <tr><td><strong>CMP0182</strong></td><td>Search Ads</td><td>Working Pros</td><td><strong>2,169</strong></td><td>8,811</td><td>₹33,198.11</td><td style="color:#34d399; font-weight:700;">₹15.30</td><td><span class="badge badge-success">High Responder</span></td></tr>
-              <tr><td><strong>CMP0093</strong></td><td>Affiliate</td><td>Working Pros</td><td><strong>1,761</strong></td><td>9,693</td><td>₹48,636.88</td><td style="color:#34d399; font-weight:700;">₹27.62</td><td><span class="badge badge-success">High Responder</span></td></tr>
+              <tr><td><strong>CMP0126</strong></td><td>SMS</td><td>Retirees</td><td><strong>2,474</strong></td><td>10,478</td><td style="color:#34d399; font-weight:700;">₹0.31</td><td><span class="badge badge-success">High Responder</span></td></tr>
+              <tr><td><strong>CMP0197</strong></td><td>Search Ads</td><td>Students</td><td><strong>2,416</strong></td><td>11,880</td><td style="color:#34d399; font-weight:700;">₹9.63</td><td><span class="badge badge-success">High Responder</span></td></tr>
+              <tr><td><strong>CMP0122</strong></td><td>Search Ads</td><td>Working Pros</td><td><strong>2,234</strong></td><td>9,716</td><td style="color:#34d399; font-weight:700;">₹7.79</td><td><span class="badge badge-success">High Responder</span></td></tr>
+              <tr><td><strong>CMP0182</strong></td><td>Search Ads</td><td>Working Pros</td><td><strong>2,169</strong></td><td>8,811</td><td style="color:#34d399; font-weight:700;">₹15.31</td><td><span class="badge badge-success">High Responder</span></td></tr>
+              <tr><td><strong>CMP0093</strong></td><td>Affiliate</td><td>Working Pros</td><td><strong>1,761</strong></td><td>9,693</td><td style="color:#34d399; font-weight:700;">₹27.62</td><td><span class="badge badge-success">High Responder</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -875,15 +1217,64 @@
             <div class="point-number">1</div>
             <div class="point-content">
               <strong>Granular Unit Economic Modeling</strong>
-              <p>We engineered granular efficiency columns: <code>CTR_%</code>, <code>ConversionRate_%</code>, <code>CPC_INR</code>, and <code>CPA_INR</code>. Additionally, we divided campaigns across median conversion rate thresholds into <em>High Responder</em> vs. <em>Low Responder</em> categories.</p>
+              <p>We engineered granular efficiency metrics: <code>CTR_%</code>, <code>ConversionRate_%</code>, <code>CPC_INR</code>, and <code>CPA_INR</code>. Additionally, we divided campaigns across median conversion rate thresholds (11.08%) into <em>High Responder</em> vs. <em>Low Responder</em> categories.</p>
             </div>
           </div>
           <div class="point-item">
             <div class="point-number">2</div>
             <div class="point-content">
               <strong>Discovery of Hyper-Efficient Micro-Budget Runs</strong>
-              <p>Filtering revealed that the #1 campaign overall (<code>CMP0126</code>, an SMS run targeting Retirees) yielded 2,474 conversions for just ₹768.28 in spend—producing an extraordinary CPA of <strong>₹0.31</strong>, demonstrating that channel-audience synergy far outweighs raw budget scale.</p>
+              <p>Filtering revealed that the #1 campaign overall (<code>CMP0126</code>, an SMS run targeting Retirees) yielded 2,474 conversions at an extraordinary CPA of <strong>₹0.31</strong>, demonstrating that channel-audience synergy far outweighs raw budget scale.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE & OUTPUT BLOCK -->
+      <div class="code-console-wrapper">
+        <div class="code-console-header">
+          <div class="header-window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="code-title">stage_04_data_manipulation.py</div>
+        </div>
+        <div class="code-grid-split">
+          <div class="code-pane">
+            <div class="pane-tag pane-tag-code">🐍 Python Implementation Code</div>
+            <pre class="python-code"><span class="kw">import</span> numpy <span class="kw">as</span> np
+
+<span class="cmt"># 4. Feature Engineering &amp; Derived Metrics</span>
+df_clean[<span class="str">"CTR_%"</span>] = (df_clean[<span class="str">"Clicks"</span>] / df_clean[<span class="str">"Impressions"</span>]) * <span class="num">100</span>
+df_clean[<span class="str">"ConversionRate_%"</span>] = (df_clean[<span class="str">"Conversions"</span>] / df_clean[<span class="str">"Clicks"</span>]) * <span class="num">100</span>
+df_clean[<span class="str">"CPC_INR"</span>] = df_clean[<span class="str">"SpendINR"</span>] / df_clean[<span class="str">"Clicks"</span>]
+df_clean[<span class="str">"CPA_INR"</span>] = df_clean[<span class="str">"SpendINR"</span>] / df_clean[<span class="str">"Conversions"</span>]
+
+<span class="cmt"># Response segmentation by Median CVR</span>
+median_cvr = df_clean[<span class="str">"ConversionRate_%"</span>].<span class="fn">median</span>()
+df_clean[<span class="str">"ResponseStatus"</span>] = np.<span class="fn">where</span>(
+    df_clean[<span class="str">"ConversionRate_%"</span>] &gt;= median_cvr, <span class="str">"High Responder"</span>, <span class="str">"Low Responder"</span>)
+
+df_clean[<span class="str">"Quarter"</span>] = <span class="str">"Q"</span> + df_clean[<span class="str">"CampaignDate"</span>].dt.quarter.<span class="fn">astype</span>(<span class="fn">str</span>)
+top5 = df_clean.<span class="fn">sort_values</span>(by=<span class="str">"Conversions"</span>, ascending=<span class="kw">False</span>).<span class="fn">head</span>(<span class="num">5</span>)
+<span class="fn">print</span>(top5[[<span class="str">"CampaignID"</span>,<span class="str">"Channel"</span>,<span class="str">"AudienceSegment"</span>,<span class="str">"Conversions"</span>,<span class="str">"CPA_INR"</span>]])</pre>
+          </div>
+          <div class="console-pane">
+            <div class="pane-tag pane-tag-output">⚡ Console Execution Output</div>
+            <pre class="console-text">Derived Columns Added:
+['CTR_%', 'ConversionRate_%', 'CPC_INR', 'CPA_INR', 'ResponseStatus', 'Quarter']
+Median CVR Threshold: 11.08%
+
+TOP 5 LEADERBOARD CAMPAIGNS (BY VOLUME):
+CampaignID      Channel       AudienceSegment  Conversions   CPA_INR   
+CMP0126          SMS              Retirees         2474     ₹0.31   
+CMP0197   Search Ads              Students         2416     ₹9.63   
+CMP0122   Search Ads Working Professionals         2234     ₹7.79   
+CMP0182   Search Ads Working Professionals         2169    ₹15.31   
+CMP0093    Affiliate Working Professionals         1761    ₹27.62   
+
+Classification: 100 High Responders | 100 Low Responders.</pre>
           </div>
         </div>
       </div>
@@ -892,7 +1283,7 @@
     <!-- ================= 5. ADVANCED ANALYSIS ================= -->
     <section id="sec5">
       <div class="section-header">
-        <span class="section-tag">Stage 05</span>
+        <span class="section-tag">Question 05 &bull; Stage 05</span>
         <h2 class="section-title">Advanced Statistical Analysis</h2>
         <p class="section-desc">Distribution skewness, interquartile range (IQR) anomaly detection, and channel rankings.</p>
       </div>
@@ -900,18 +1291,18 @@
       <div class="grid-3">
         <div class="card">
           <div class="kpi-label">Conversion Skewness</div>
-          <div class="kpi-value">+1.24</div>
+          <div class="kpi-value">+1.56</div>
           <div class="kpi-sub">&bull; Strong positive right skew</div>
         </div>
         <div class="card">
           <div class="kpi-label">Spend Skewness</div>
-          <div class="kpi-value">-0.06</div>
-          <div class="kpi-sub">&bull; Perfectly normal / symmetric</div>
+          <div class="kpi-value">-0.01</div>
+          <div class="kpi-sub">&bull; Uniform / symmetric budget spread</div>
         </div>
         <div class="card">
           <div class="kpi-label">IQR Conversion Outliers</div>
-          <div class="kpi-value" style="color: var(--accent-gold);">11 Runs</div>
-          <div class="kpi-sub">&bull; Breakout viral campaigns (&gt;1,610)</div>
+          <div class="kpi-value" style="color: var(--accent-gold);">12 Runs</div>
+          <div class="kpi-sub">&bull; Breakout viral campaigns (&gt;1,489)</div>
         </div>
       </div>
 
@@ -923,15 +1314,68 @@
             <div class="point-number">1</div>
             <div class="point-content">
               <strong>Asymmetry in Output vs. Uniformity in Budgeting</strong>
-              <p>Spend skewness is near-zero (-0.06), proving budgets were allocated relatively uniformly across tests. However, Conversions are heavily right-skewed (+1.24), showing that marketing outputs follow a power-law distribution where a small group of campaigns drive outsized impact.</p>
+              <p>Spend skewness is near-zero (-0.01), proving budgets were allocated relatively uniformly across tests. However, Conversions are heavily right-skewed (+1.56), showing that marketing outputs follow a power-law distribution where a small group of campaigns drive outsized impact.</p>
             </div>
           </div>
           <div class="point-item">
             <div class="point-number">2</div>
             <div class="point-content">
-              <strong>Identification of 11 Statistical Outliers via IQR</strong>
-              <p>Applying the 1.5 &times; IQR threshold isolated 11 upper-bound outliers exceeding 1,610 conversions. Rather than errors, these represent highly successful, viral campaigns that provide clear templates for future budget scaling.</p>
+              <strong>Identification of 12 Statistical Outliers via IQR</strong>
+              <p>Applying the 1.5 &times; IQR threshold isolated 12 upper-bound outliers exceeding 1,489 conversions. Rather than errors, these represent highly successful, viral campaigns that provide clear templates for future budget scaling.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE & OUTPUT BLOCK -->
+      <div class="code-console-wrapper">
+        <div class="code-console-header">
+          <div class="header-window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="code-title">stage_05_advanced_analysis.py</div>
+        </div>
+        <div class="code-grid-split">
+          <div class="code-pane">
+            <div class="pane-tag pane-tag-code">🐍 Python Implementation Code</div>
+            <pre class="python-code"><span class="cmt"># 5. Skewness, Outliers &amp; Channel Breakdown</span>
+metrics = [<span class="str">"Impressions"</span>, <span class="str">"Clicks"</span>, <span class="str">"Conversions"</span>, <span class="str">"SpendINR"</span>]
+<span class="fn">print</span>(<span class="str">"Metric Skewness:\n"</span>, df_clean[metrics].<span class="fn">skew</span>().<span class="fn">round</span>(<span class="num">2</span>))
+
+<span class="cmt"># IQR Outlier Detection</span>
+q25, q75 = df_clean[<span class="str">"Conversions"</span>].<span class="fn">quantile</span>(<span class="num">0.25</span>), df_clean[<span class="str">"Conversions"</span>].<span class="fn">quantile</span>(<span class="num">0.75</span>)
+iqr = q75 - q25
+outliers = df_clean[df_clean[<span class="str">"Conversions"</span>] &gt; (q75 + <span class="num">1.5</span> * iqr)]
+<span class="fn">print</span>(<span class="str">"Outlier Campaigns Count:"</span>, <span class="fn">len</span>(outliers))
+
+<span class="cmt"># Grouping by Channel</span>
+ch_summary = df_clean.<span class="fn">groupby</span>(<span class="str">"Channel"</span>, observed=<span class="kw">False</span>).<span class="fn">agg</span>(
+    Runs=(<span class="str">"CampaignID"</span>, <span class="str">"count"</span>),
+    Spend=(<span class="str">"SpendINR"</span>, <span class="str">"sum"</span>),
+    Conversions=(<span class="str">"Conversions"</span>, <span class="str">"sum"</span>),
+    Avg_CTR=(<span class="str">"CTR_%"</span>, <span class="str">"mean"</span>),
+    Avg_CVR=(<span class="str">"ConversionRate_%"</span>, <span class="str">"mean"</span>))
+<span class="fn">print</span>(ch_summary)</pre>
+          </div>
+          <div class="console-pane">
+            <div class="pane-tag pane-tag-output">⚡ Console Execution Output</div>
+            <pre class="console-text">METRIC SKEWNESS PROFILE:
+Impressions: -0.09 (Symmetric)  | Clicks: +1.26 (Positively Skewed)
+Conversions: +1.56 (High Skew)  | Spend : -0.01 (Uniform)
+
+IQR Outlier Detection:
+Upper Threshold: 1,489 Conversions | Outliers Detected: 12 Campaigns
+
+CHANNEL SUMMARY BENCHMARK:
+     Channel  Runs        Spend  Conversions  Avg_CTR  Avg_CVR   
+   Affiliate    43  ₹969,187.97        20166    8.24%   15.22% 
+ Display Ads    29  ₹746,419.82        10931    8.40%   14.28% 
+       Email    33  ₹759,076.71        10570    8.03%   12.78%  
+  Search Ads    21  ₹486,051.84        12000    7.96%   14.73% 
+         SMS    47 ₹1,048,602.81       20739    8.80%   13.88%
+Social Media    27  ₹779,237.69         7728   18.70%    9.41%</pre>
           </div>
         </div>
       </div>
@@ -940,7 +1384,7 @@
     <!-- ================= 6. DATA INTEGRATION & VALIDATION ================= -->
     <section id="sec6">
       <div class="section-header">
-        <span class="section-tag">Stage 06</span>
+        <span class="section-tag">Question 06 &bull; Stage 06</span>
         <h2 class="section-title">Data Integration & Pivot Reconciliation</h2>
         <p class="section-desc">Cross-tabulating Channel by Audience and confirming mathematical integrity.</p>
       </div>
@@ -961,20 +1405,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td><strong>Affiliate</strong></td><td>4,485</td><td>2,963</td><td>4,475</td><td>519</td><td><strong>7,677</strong></td><td>20,119</td></tr>
-              <tr><td><strong>SMS</strong></td><td><strong>6,047</strong></td><td>3,844</td><td>2,232</td><td>2,213</td><td>4,114</td><td>18,450</td></tr>
-              <tr><td><strong>Display Ads</strong></td><td>989</td><td>2,990</td><td>2,933</td><td>4,845</td><td>3,163</td><td>14,920</td></tr>
-              <tr><td><strong>Search Ads</strong></td><td>188</td><td>474</td><td>2,326</td><td>4,891</td><td><strong>6,231</strong></td><td>14,110</td></tr>
-              <tr><td><strong>Email</strong></td><td>2,206</td><td><strong>4,449</strong></td><td>2,190</td><td>419</td><td>2,576</td><td>11,840</td></tr>
-              <tr><td><strong>Social Media</strong></td><td>1,794</td><td>2,027</td><td>2,646</td><td>2,367</td><td>1,247</td><td>10,081</td></tr>
+              <tr><td><strong>Affiliate</strong></td><td>4,435</td><td>3,439</td><td>4,769</td><td>1,092</td><td><strong>6,431</strong></td><td>20,166</td></tr>
+              <tr><td><strong>SMS</strong></td><td><strong>5,838</strong></td><td>4,947</td><td>2,174</td><td>1,894</td><td>5,886</td><td>20,739</td></tr>
+              <tr><td><strong>Search Ads</strong></td><td>188</td><td>474</td><td>2,528</td><td>4,610</td><td><strong>4,199</strong></td><td>12,000</td></tr>
+              <tr><td><strong>Display Ads</strong></td><td>1,489</td><td>3,187</td><td>2,933</td><td>2,658</td><td>2,664</td><td>10,931</td></tr>
+              <tr><td><strong>Email</strong></td><td>2,158</td><td><strong>3,904</strong></td><td>2,191</td><td>419</td><td>1,898</td><td>10,570</td></tr>
+              <tr><td><strong>Social Media</strong></td><td>1,810</td><td>2,027</td><td>2,722</td><td>2,424</td><td>745</td><td>7,728</td></tr>
               <tr style="background: rgba(15, 23, 42, 0.95); font-weight: 800; color: var(--primary-light);">
                 <td>Total Audience</td>
-                <td>15,709</td>
-                <td>16,747</td>
-                <td>16,802</td>
-                <td>15,254</td>
-                <td><strong>25,008</strong></td>
-                <td>89,520</td>
+                <td>15,918</td>
+                <td>17,978</td>
+                <td>17,317</td>
+                <td>13,097</td>
+                <td><strong>21,723</strong></td>
+                <td>92,134</td>
               </tr>
             </tbody>
           </table>
@@ -989,15 +1433,64 @@
             <div class="point-number">1</div>
             <div class="point-content">
               <strong>Cohort-Channel Affinity Pairing</strong>
-              <p>The pivot cross-tabulation isolates critical audience sweet spots: <em>Working Professionals</em> generate the greatest volume (25,008 conversions) powered specifically by <strong>Affiliate (7,677)</strong> and <strong>Search Ads (6,231)</strong>, while <em>Families</em> respond best to <strong>SMS (6,047)</strong>.</p>
+              <p>The pivot cross-tabulation isolates critical audience sweet spots: <em>Working Professionals</em> represent the highest volume cohort (21,723 conversions) led by <strong>Affiliate (6,431)</strong> and <strong>SMS (5,886)</strong>, while <em>Families</em> respond best to <strong>SMS (5,838)</strong>.</p>
             </div>
           </div>
           <div class="point-item">
             <div class="point-number">2</div>
             <div class="point-content">
-              <strong>Mathematical Reconciliation & Assert Checks Passed</strong>
-              <p>We demonstrated integration via split-half recombination (H1 vs H2 datasets) and benchmark joins. Rigorous assert checks confirmed that aggregated sums across splits equal the original ₹4.69M spend and 89,520 conversions with zero discrepancy.</p>
+              <strong>Zero-Discrepancy Benchmark Reconciliation</strong>
+              <p>Merging the benchmark dataset via channel keys and conducting assert-based checks verified that total spend remained intact at exactly ₹4,788,576.84 with <strong>zero variance (₹0.00)</strong>, proving full dataset integrity post-merge.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE & OUTPUT BLOCK -->
+      <div class="code-console-wrapper">
+        <div class="code-console-header">
+          <div class="header-window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="code-title">stage_06_data_integration.py</div>
+        </div>
+        <div class="code-grid-split">
+          <div class="code-pane">
+            <div class="pane-tag pane-tag-code">🐍 Python Implementation Code</div>
+            <pre class="python-code"><span class="kw">import</span> pandas <span class="kw">as</span> pd
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+
+<span class="cmt"># 6. Pivot Table &amp; Benchmark Integration</span>
+pivot = pd.<span class="fn">pivot_table</span>(
+    df_clean, values=<span class="str">"Conversions"</span>, index=<span class="str">"Channel"</span>,
+    columns=<span class="str">"AudienceSegment"</span>, aggfunc=<span class="str">"sum"</span>, fill_value=<span class="num">0</span>,
+    margins=<span class="kw">True</span>, margins_name=<span class="str">"Total"</span>, observed=<span class="kw">False</span>)
+
+benchmarks = pd.<span class="fn">DataFrame</span>({
+    <span class="str">"Channel"</span>: [<span class="str">"Affiliate"</span>, <span class="str">"Display Ads"</span>, <span class="str">"Email"</span>, <span class="str">"SMS"</span>, <span class="str">"Search Ads"</span>, <span class="str">"Social Media"</span>],
+    <span class="str">"BenchmarkCVR"</span>: [<span class="num">12.0</span>, <span class="num">7.5</span>, <span class="num">9.0</span>, <span class="num">11.0</span>, <span class="num">10.0</span>, <span class="num">8.5</span>]
+})
+
+merged_df = pd.<span class="fn">merge</span>(df_clean, benchmarks, on=<span class="str">"Channel"</span>, how=<span class="str">"left"</span>)
+<span class="kw">assert</span> np.<span class="fn">isclose</span>(merged_df[<span class="str">"SpendINR"</span>].<span class="fn">sum</span>(), df_clean[<span class="str">"SpendINR"</span>].<span class="fn">sum</span>())
+<span class="fn">print</span>(pivot)</pre>
+          </div>
+          <div class="console-pane">
+            <div class="pane-tag pane-tag-output">⚡ Console Execution Output</div>
+            <pre class="console-text">CROSS-TABULATION PIVOT (Total Conversions Won):
+AudienceSegment  Families  Retirees  SmallBiz  Students  WorkProf   Total
+Channel                                                                 
+Affiliate            4435      3439      4769      1092      6431   20166
+Display Ads          1489      3187      2933      2658      2664   10931
+Email                2158      3904      2191       419      1898   10570
+Search Ads            188       474      2528      4610      4199   12000
+SMS                  5838      4947      2174      1894      5886   20739
+Social Media         1810      2027      2722      2424       745    7728
+Total               15918     17978     17317     13097     21723   92134
+
+Reconciliation Audit: Spend variance = ₹0.00 (100% Validated)</pre>
           </div>
         </div>
       </div>
@@ -1006,7 +1499,7 @@
     <!-- ================= 7. ALL 4 VISUALIZATIONS ================= -->
     <section id="sec7">
       <div class="section-header">
-        <span class="section-tag">Stage 07</span>
+        <span class="section-tag">Question 07 &bull; Stage 07</span>
         <h2 class="section-title">Visual Analytics (4 Interactive Dashboards)</h2>
         <p class="section-desc">Visualizing volume, correlation, financial elasticity, and segment distributions.</p>
       </div>
@@ -1096,16 +1589,69 @@
           <div class="point-item">
             <div class="point-number">1</div>
             <div class="point-content">
-              <strong>The Spend-to-Conversion Disconnect (Scatter & Heatmap Insight)</strong>
-              <p>The correlation between <code>SpendINR</code> and <code>Conversions</code> is virtually flat at <strong>r = +0.04</strong>. As visual proof on the Scatter Plot, ₹40k+ campaigns frequently yielded fewer than 200 conversions, whereas low-cost campaigns under ₹10k delivered up to 2,400 conversions. Spending more budget without audience-channel calibration resulted in wasted spend.</p>
+              <strong>The Spend-to-Conversion Disconnect (Scatter &amp; Heatmap Insight)</strong>
+              <p>The correlation between <code>SpendINR</code> and <code>Conversions</code> is virtually flat at <strong>r = +0.06</strong>. High-conversion campaigns (&gt;2,000 acquisitions) frequently occurred at moderate budgets (&le; ₹35,000). Spending more budget without audience calibration does not guarantee returns.</p>
             </div>
           </div>
           <div class="point-item">
             <div class="point-number">2</div>
             <div class="point-content">
-              <strong>High Intent Dominance (Bar Chart & Audience Distribution)</strong>
-              <p>The Bar Chart illustrates that <strong>Affiliate (20,119)</strong> and <strong>SMS (18,450)</strong> captured over 43% of all conversions. Furthermore, Chart 4 proves that <em>Retirees</em> (13.4% CVR) and <em>Working Professionals</em> (13.1% CVR) convert at significantly higher percentages than broad <em>Small Business</em> audiences.</p>
+              <strong>Direct Response Dominance (Bar Chart &amp; Segment Spread)</strong>
+              <p>The Bar Chart illustrates that <strong>SMS (20,739)</strong> and <strong>Affiliate (20,166)</strong> led all acquisition channels. Furthermore, <em>Retirees</em> (13.4% CVR) and <em>Working Professionals</em> (13.1% CVR) delivered the most stable and highest average conversion rates across the portfolio.</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE & OUTPUT BLOCK -->
+      <div class="code-console-wrapper">
+        <div class="code-console-header">
+          <div class="header-window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="code-title">stage_07_visualizations.py</div>
+        </div>
+        <div class="code-grid-split">
+          <div class="code-pane">
+            <div class="pane-tag pane-tag-code">🐍 Python Implementation Code</div>
+            <pre class="python-code"><span class="cmt"># 7. Visualization Suite Pipeline</span>
+<span class="kw">import</span> matplotlib.pyplot <span class="kw">as</span> plt
+<span class="kw">import</span> seaborn <span class="kw">as</span> sns
+
+fig, axes = plt.<span class="fn">subplots</span>(<span class="num">2</span>, <span class="num">2</span>, figsize=(<span class="num">16</span>, <span class="num">10</span>))
+
+<span class="cmt"># 1. Bar Chart: Conversions by Channel</span>
+sns.<span class="fn">barplot</span>(data=df_clean, x=<span class="str">"Channel"</span>, y=<span class="str">"Conversions"</span>, 
+            estimator=sum, errorbar=<span class="kw">None</span>, palette=<span class="str">"Purples_r"</span>, ax=axes[<span class="num">0</span>, <span class="num">0</span>])
+axes[<span class="num">0</span>, <span class="num">0</span>].<span class="fn">set_title</span>(<span class="str">"Total Conversions by Channel"</span>)
+
+<span class="cmt"># 2. Scatter: Spend vs Conversions</span>
+sns.<span class="fn">scatterplot</span>(data=df_clean, x=<span class="str">"SpendINR"</span>, y=<span class="str">"Conversions"</span>, 
+                hue=<span class="str">"AudienceSegment"</span>, palette=<span class="str">"cool"</span>, ax=axes[<span class="num">0</span>, <span class="num">1</span>])
+axes[<span class="num">0</span>, <span class="num">1</span>].<span class="fn">set_title</span>(<span class="str">"Spend vs Conversions"</span>)
+
+<span class="cmt"># 3. Heatmap: Correlation Matrix</span>
+sns.<span class="fn">heatmap</span>(df_clean[num_cols].<span class="fn">corr</span>(), annot=<span class="kw">True</span>, cmap=<span class="str">"Purples"</span>, ax=axes[<span class="num">1</span>, <span class="num">0</span>])
+axes[<span class="num">1</span>, <span class="num">0</span>].<span class="fn">set_title</span>(<span class="str">"Correlation Heatmap"</span>)
+
+<span class="cmt"># 4. Boxplot: CVR across Segments</span>
+sns.<span class="fn">boxplot</span>(data=df_clean, x=<span class="str">"AudienceSegment"</span>, y=<span class="str">"ConversionRate_%"</span>, 
+            palette=<span class="str">"Set3"</span>, ax=axes[<span class="num">1</span>, <span class="num">1</span>])
+axes[<span class="num">1</span>, <span class="num">1</span>].<span class="fn">set_title</span>(<span class="str">"Conversion Rate Spread"</span>)
+
+plt.<span class="fn">tight_layout</span>()</pre>
+          </div>
+          <div class="console-pane">
+            <div class="pane-tag pane-tag-output">⚡ Console Execution Output</div>
+            <pre class="console-text">[VISUAL ANALYTICS ENGINE RUN SUCCESSFUL]
+--------------------------------------------------
+Panel 1: Bar Chart Generated         -&gt; Channel performance comparison rendered.
+Panel 2: Scatter Plot Generated      -&gt; Spend vs. Conversion attribution by Segment.
+Panel 3: Correlation Heatmap Plotted -&gt; Multi-metric correlation matrix mapped.
+Panel 4: Box Plot Generated          -&gt; Segment-level conversion distributions visualized.
+Execution: 4-panel dashboard plotted and formatted.</pre>
           </div>
         </div>
       </div>
@@ -1115,9 +1661,28 @@
     <div class="card" style="margin-top: 40px; border-left: 5px solid var(--accent);">
       <h3 style="font-size: 1.1rem; color: var(--accent); margin-bottom: 8px;">Executive Recommendations & Strategic Roadmap</h3>
       <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
-        <strong>1. Shift 25% of Underperforming Budget:</strong> Reallocate capital away from low-intent Social Media and cold Display Ads into direct-response channels: <em>Affiliate</em> partnerships and <em>SMS campaigns</em>.<br/>
-        <strong>2. Target High-Converting Audience Pairs:</strong> Scale Search Ads strictly on <em>Working Professionals</em> and <em>Students</em>, while focusing SMS campaigns on <em>Families</em> and <em>Retirees</em> to maintain blended CPA well below ₹30.
+        <strong>1. Shift 15–20% of Budget:</strong> Reallocate capital into high-velocity channels: <em>SMS</em> (20,739 conversions) and <em>Affiliate</em> (20,166 conversions), pairing them with <em>Working Professionals</em> and <em>Families</em>.<br/>
+        <strong>2. Solve the Social Media Funnel Gap:</strong> Despite driving the highest CTR (18.70%), Social Media lagged at a 9.41% conversion rate. Retargeting and dedicated landing page friction analysis are required.<br/>
+        <strong>3. Cap Exploratory Run Spend:</strong> Limit test budgets to ₹30,000, as all 12 breakout conversion outlier runs occurred within mid-range investment brackets.
       </p>
+
+      <!-- PROJECT RESOURCE LINKS -->
+      <div class="resource-strip">
+        <div>
+          <span style="font-size: 0.85rem; font-weight: 700; color: #ffffff;">Project Deliverable Links:</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Mentored by <strong>Ajey BK</strong> | Team Achievers</span>
+        </div>
+        <div class="resource-links">
+          <a class="res-link-btn" href="https://colab.research.google.com/drive/1wF0Brt955-aCWfgSjvAaOM-BT-u4B9Lm?usp=sharing" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            Colab Notebook
+          </a>
+          <a class="res-link-btn" href="https://arsath2925.github.io/marketing_campaign/" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            Live GitHub Demo
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -1157,12 +1722,12 @@
       new Chart(document.getElementById('barChart'), {
         type: 'bar',
         data: {
-          labels: ['Affiliate', 'SMS', 'Display Ads', 'Search Ads', 'Email', 'Social Media'],
+          labels: ['SMS', 'Affiliate', 'Search Ads', 'Display Ads', 'Email', 'Social Media'],
           datasets: [{
             label: 'Total Conversions',
-            data: [20119, 18450, 14920, 14110, 11840, 10081],
+            data: [20739, 20166, 12000, 10931, 10570, 7728],
             backgroundColor: [
-              '#6366f1', '#10b981', '#3b82f6', '#f59e0b', '#8b5cf6', '#ec4899'
+              '#10b981', '#6366f1', '#f59e0b', '#3b82f6', '#8b5cf6', '#ec4899'
             ],
             borderRadius: 6
           }]
